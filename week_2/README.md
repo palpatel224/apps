@@ -1,4 +1,10 @@
-# Demo 
+# Week 2
+
+## Learning 
+
+Learned Basic UI 
+
+## Demo 
 
 
 
