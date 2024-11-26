@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "294761007888",
+    "project_id": "bootcampweek4-b6ae1",
+    "storage_bucket": "bootcampweek4-b6ae1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294761007888:android:7ef5f31013f976f2fbf395",
+        "android_client_info": {
+          "package_name": "com.example.week_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294761007888-cbnpte5pc7jkbsfbkjufiupm8ejmlmis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL9TRDmlyiGW_KfVm1FhTf4cY7as67PPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294761007888-cbnpte5pc7jkbsfbkjufiupm8ejmlmis.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "294761007888-3csk3d31n8nj1rqti3c6u8kdmq4jrcvd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.week4"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
