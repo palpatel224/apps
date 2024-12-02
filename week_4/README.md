@@ -1,16 +1,14 @@
 # week_4
 
-A new Flutter project.
+# Demo 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/22346fca-7b50-4cda-9000-566defd0183d
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# App link 
+https://drive.google.com/file/d/19wweC37h92W5b8BtXOJS_bZA_DwUUzsp/view?usp=drive_link
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Features to be implemented 
+> To add the background image from NASA's api while adding api 
