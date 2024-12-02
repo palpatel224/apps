@@ -1,50 +1,28 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:week_5/bus_routes.dart';
+import 'package:week_5/0_data/datasources/remote_datasource.dart';
+import 'package:week_5/1_domain/entities/bus_routes_entites.dart';
+import 'package:week_5/1_domain/repositories/bus_routes_repo.dart';
 
-class BusRoutesApiService {
-  static const baseUrl = 'https://app-bootcamp.iris.nitk.ac.in';
+class BusRouteRepositoryImpl implements BusRouteRepository {
+  final BusRouteRemoteDataSource remoteDataSource;
 
-  Future<List<BusRoute>> fetchBusRoutes({
-    required int page,
-    required int limit,
-    String? searchQuery,
-  }) async {
-    try {
-      final uri = Uri.parse('$baseUrl/bus_routes').replace(
-        queryParameters: {
-          'page': page.toString(),
-          'limit': limit.toString(),
-          if (searchQuery != null) 'search': searchQuery,
-        },
-      );
+  BusRouteRepositoryImpl(this.remoteDataSource);
 
-      final response = await http.get(
-        uri,
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-      );
-
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> responseBody = json.decode(response.body);
-        final List<dynamic> routesJson = responseBody['routes'] ?? [];
-        return routesJson.map((json) => _parseRouteFromJson(json)).toList();
-      } else {
-        throw Exception('Failed to load bus routes: ${response.statusCode}');
-      }
-    } catch (e) {
-      throw Exception('Network error: $e');
-    }
+  @override
+  Future<List<BusRoute>> getAllBusRoutes(int page, int size) async {
+    return await remoteDataSource.fetchAllBusRoutes(page, size);
   }
 
-  BusRoute _parseRouteFromJson(Map<String, dynamic> json) {
-    return BusRoute(
-      busNumber: json['bus_number']?.toString() ?? '',
-      fromLocation: json['from_location'] ?? 'Unknown',
-      toLocation: json['to_location'] ?? 'Unknown',
-      route: json['route'] ?? 'General',
-    );
+  @override
+  Future<List<BusRoute>> searchBusRoutes(String? fromLocation, String? toLocation) async {
+    return await remoteDataSource.searchBusRoutes(fromLocation, toLocation);
   }
+
+  @override
+  Future<BusRoute> getRouteDetails(String busNumber) async {
+    return await remoteDataSource.fetchRouteDetails(busNumber);
+  }
+    @override
+  Future<BusRoute> searchByBusNumber(String busNumber) async {
+    return await remoteDataSource.fetchRouteDetails(busNumber);
+  }  
 }
